@@ -25,16 +25,14 @@
         </div>
         <section class="product-list-medium product-list-mediums">
             <ul>
-             
-              <li>
-                <div class="product-div">
-                  <a class="product-div-link" href="{$best.url}"></a>
-                  <img class="product-list-img" src="http://placehold.it/100x100" />
+              <li v-for="best in product_list">
+                <router-link :to="'/product?id='+best.id" class="product-div">
+                  <img class="product-list-img" :src="best.pic" />
                   <div class="product-text  index-product-text">
-                      <div class="cont">{$best.goods_name}</div>
-                      <p><span class="p-price color-red"><span class="dole">￥</span>{$best.current_price}</span></p>
+                      <div class="cont">{{best.goods_name}}</div>
+                      <p><span class="p-price color-red"><span class="dole">￥</span>{{best.current_price}}</span></p>
                     </div>
-                </div>
+                </router-link>
               </li>
               
             </ul>
@@ -44,13 +42,13 @@
     <div class="clearfix">
 			<div class="artcle-hds">新闻列表</div>
       <ul class="article-group">
-        <li class="article-list-other" @click="toArtl(1)">
+        <li class="article-list-other" v-for="item in new_list" @click="toArtl(1)">
             <div class="content">
-              <div class="hd">标题</div>
-              <div class="read">阅读量： 999&nbsp;&nbsp;&nbsp;&nbsp;分类</div>
+              <div class="hd">{{item.title}}</div>
+              <div class="read">阅读量： {{item.read}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.sort}}</div>
             </div>
             <div class="img-list">
-              <img class="img-al" src="http://placehold.it/100x100">
+              <img class="img-al" :src="item.pic">
             </div>
         </li>
       </ul>
@@ -65,29 +63,30 @@ import {Divider, Swiper, Icon} from 'vux'
 export default {
 	name: 'index',
 	components: {Divider, Swiper, Icon, FooterNav},
+	created() {
+		// 获取index数据
+		this.$store.dispatch('getIndexData')
+			
+	},
+	computed: {
+		swiper_list() {
+			return this.$store.state.swiper_list
+		},
+		product_list() {
+			return this.$store.state.product_list
+		},
+		new_list() {
+				return this.$store.state.new_list
+		}
+		
+	},
 	data() {
 		return {
 			
-			swiper_list: [{
-			  url: 'javascript:',
-			  img: 'http://placehold.it/100x100',
-			  title: '送你一朵fua'
-			}, {
-			  url: 'javascript:',
-			  img: 'http://placehold.it/100x100',
-			  title: '送你一次旅行',
-			  fallbackImg: 'https://static.vux.li/demo/3.jpg'
-			}, {
-			  url: 'javascript:',
-			  img: 'http://placehold.it/100x100',
-			  title: '送你一次旅行',
-			  fallbackImg: 'https://static.vux.li/demo/3.jpg'
-			}]
 		}
 	},
 	methods: {
 		toArtl: function(id) {
-			// console.log(this.$router)
 			this.$router.push({path:'/article/detail',query:{id: id}})
 		},
 		search() {
@@ -125,10 +124,11 @@ export default {
 .p-r {position: relative;background: #FFFFFF;}
 .col-w {fill:#FFFFFF;vertical-align: text-top;}
 .product-list-medium{padding:0rem 0rem;}
-.product-list-medium ul li{float:left; width:50%; padding:.2rem 0;}
+.product-list-medium ul li{float:left; width:50%; padding:.2rem 0;box-sizing: border-box;}
 .product-list-medium ul li:nth-child(2n-1){padding-right:0.2rem;}
 .product-list-medium ul li:nth-child(2n){padding-left:0.2rem;}
 .product-list-medium .product-text{padding:.5rem;background: #FFFFFF;}
+.product-list-medium .product-text .cont {color:#333;}
 .product-list-medium .p-t-remark{font-size:.8rem; padding-top:.2rem; display: none;/*隐藏库存销量*/}
 .product-list-medium .p-price{font-size:.7rem;}
 .product-list-medium .p-price small{margin-left:.6rem; display:none;/*隐藏市场价*/}
