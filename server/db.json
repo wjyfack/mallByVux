@@ -1,0 +1,65 @@
+{
+	"index": {
+		"swiper_list": [{
+			"url": "javascript:",
+			"img": "http://placehold.it/100x100",
+			"title": "送你一朵fua"
+		}, {
+			"url": "javascript:",
+			"img": "http://placehold.it/100x100",
+			"title": "送你一次旅行",
+			"fallbackImg": "http://placehold.it/100x100"
+		}, {
+			"url": "javascript:",
+			"img": "http://placehold.it/100x100",
+			"title": "送你一次旅行",
+			"fallbackImg": "http://placehold.it/100x100"
+		}],
+		"product_list": [{
+			"id": 1,
+			"pic": "http://placehold.it/100x100",
+			"goods_name": "商品名称",
+			"current_price": 99.00
+		},{
+			"id": 1,
+			"pic": "http://placehold.it/100x100",
+			"goods_name": "商品名称",
+			"current_price": 99.00
+		},{
+			"id": 1,
+			"pic": "http://placehold.it/100x100",
+			"goods_name": "商品名称",
+			"current_price": 99.00
+		}],
+		"new_list": [{
+			"id": 2,
+			"amity_time": "2018.07.22",
+			"author": "吴xx",
+			"content": "content//content//内容",
+			"title": "标题",
+			"read": 999,
+			"sort": "分类",
+			"pic": "http://placehold.it/100x100"
+			
+		}]
+	},
+	"news": [{
+		"id": 1,
+		"amity_time": "2018.07.22",
+		"author": "吴xx",
+		"content": "content//content//内容",
+		"title": "标题",
+		"read": 999,
+		"sort": "分类",
+		"pic": "http://placehold.it/100x100"
+	},{
+		"id": 2,
+		"amity_time": "2018.07.22",
+		"author": "吴xx",
+		"content": "content//content//内容",
+		"title": "标题",
+		"read": 999,
+		"sort": "分类",
+		"pic": "http://placehold.it/100x100"
+	}]
+}

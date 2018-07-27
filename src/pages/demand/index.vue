@@ -6,7 +6,7 @@
       <section class="search box ts-3">
        <div class="text-all position-rel dis-box j-text-all">
 
-         <div class="dis-box search-logo-up"><div class="onelist-hidden" id="j-lbs-city"><img src="../../assets/images/logo.jpg"></div></div>
+         <div class="dis-box search-logo-up" @click="back()"><div class="onelist-hidden" id="j-lbs-city"><x-icon class="col-fill-w" type="ios-arrow-back" size="20"></x-icon></div></div>
 
          <div class="box-flex input-text bg-w">
            <a href="" class="a-search-input"></a>
@@ -73,6 +73,11 @@
 			return {
 				
 			}
+		},
+		methods: {
+			back() {
+				this.$router.back()
+			}
 		}
 	}
 </script>
@@ -80,8 +85,7 @@
 <style scoped>
 	
 .text-all {display:flex;font-size: .8rem;}
-	
-	
+.col-fill-w {fill: #FFFFFF;vertical-align: middle;}
  .article_info {margin-top:3.5rem;}
   .box-flex {display:flex;}
   .dis-box-j {display:flex; width:100%;justify-content: space-between;padding: .5rem 0;}

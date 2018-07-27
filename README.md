@@ -1,30 +1,15 @@
 # project_vux_demo
 
-> A Vue.js project
+> 这个一个基于vux的手机端商城，部分的页面还没有弄好 <__>
 
-## Build Setup
+## 启动
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
+# 启动应用
 npm run dev
+#启动服务器
+json-server --watch ./server/db.json
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
+## 项目截图
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -42,9 +42,23 @@
       },
       methods: {
         showPosition: function(value) {
-			
-			this.showToast()
-			console.log(this.user, this.pwd)
+				// 检测数据正确性， 数据不校验了有空再写
+				if(this.user.trim() == ''){
+					this.text = '请输入用户名/手机号';
+					this.showToast()
+					return;
+				}
+				if(this.pwd.trim() == '') {
+					this.text = '请输入密码';
+					this.showToast()
+					return;
+				}
+				// 放进store里
+				var data = {info: 'yes',username: this.user,pwd: this.pwd}
+				this.$store.commit('setUserInfo',data);
+				// 跳转到个人首页
+				this.$router.push({path: '/home'})
+			  //console.log(this.user, this.pwd)
 		},
 		showToast: function() {
 			let that = this;

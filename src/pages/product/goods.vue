@@ -1,5 +1,6 @@
 <template>
 	<div>
+		
 		<div class="tab">
 			<tab>
 			  <tab-item selected>商品</tab-item>
@@ -29,8 +30,8 @@
 		<div class="cell">
 			<group>
 				<popup-picker class="f-08" :title="title" :data="list3" :columns="3" v-model="value4" show-name :value-text-align="align"></popup-picker>
-				<cell is-link>
-					<span slot="title" class="col-6 f-08">已选 <span class="col-3">1</span></span>
+				<cell is-link  @click.native="openTap()">
+					<span slot="title" class="col-6 f-08">已选 <span class="col-3">{{num}}</span></span>
 				</cell>
 				<cell is-link>
 					<span slot="title" class="col-6 f-08">商品反馈</span>
@@ -38,7 +39,13 @@
 			</group>
 			
 		</div>
-		<div class="show-cate vux-1px-t">
+		<div class="content">
+			<div class="content-hd">商品详情</div>
+			<div class="cont">
+				sjisjijsi
+			</div>
+		</div>
+		<div class="show-cate vux-1px-t" :class="{'show': status}">
 			<div class="show">
 				<div class="cate vux-1px-b">
 					<div class="pro-img">
@@ -49,14 +56,30 @@
 						<span class="price">$99.00</span>
 						<span class="col-6">库存:1000</span>
 					</div>
-					<img class="close" src="./../../assets/close.png" alt="">
+					<img @click="colseTap" class="close" src="./../../assets/close.png" alt="">
 				</div>
 				<div class="xnum">
 					<div class="f-08 col-6">数量</div>
-					<inline-x-number></inline-x-number>
+					<inline-x-number v-model="num"></inline-x-number>
 				</div>
+				
+			</div>
+			<div class="btn-g">	
+				<div class="btn-g-l ot-col ">立即购买</div>
+				<div class="btn-g-l">确定</div>
 			</div>
 		</div>
+		<div class="bot-bar">
+			<div class="flex-left">
+				<img src="./../../assets/user/collection.png" alt="">
+				收藏
+			</div>
+			<div class="flex-right">
+				<div class="flex-btn btn-col">加入购物车</div>
+				<div class="flex-btn">立即购买</div>
+			</div>
+		</div>
+		<div class="all-tap" :class="{'show': status}"></div>
 	</div>
 </template>
 
@@ -75,8 +98,10 @@
 		},
 		data() {
 			return {
+				status: false,
 				dots: false,
 				mask: false,
+				num: 1,
 				list: [{
 					url: 'javascript:',
 					img: 'http://placehold.it/100x100',
@@ -145,12 +170,91 @@
 					parent: 'usa002'
 				  }],
 			}
+		},
+		methods: {
+			colseTap() {
+				this.status = false
+			},
+			openTap() {
+				console.log('sss')
+				this.status = true
+			}
 		}
 	}
 </script>
 
 <style lang="less" scoped>
 @import '~vux/src/styles/1px.less';
+@col-btn: #EC5151;
+@col-btn-ot: #ff9600;
+.content {
+	background: #FFFFFF;
+	margin-top: .5rem;
+	padding: .5rem;
+	.cont {
+		font-size: .9rem;
+		color: #333;
+	}
+}
+.all-tap {
+	width:100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 22;
+	background: rgba(0,0,0,.6);
+	display: none;
+}
+.show {display: block !important;}
+.bot-bar {
+	width: 100%;
+	position:fixed;
+	bottom: 0;
+	display: flex;
+	.flex-left {
+		display: flex;
+		flex-direction: column;
+    align-items: center;
+		font-size: .8rem;
+		color: #666666;
+		padding: 0 .5rem;
+		img { width: 1.5rem;height: 1.5rem;}
+	}
+	.flex-right {
+		flex:1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.flex-btn {
+			width: 50%;
+			text-align: center;
+			color:#FFFFFF;
+			background: @col-btn;
+			padding: .5rem 0;
+			&.btn-col {
+				background: @col-btn-ot;
+			}
+		}
+		
+	}
+}
+.btn-g {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	.btn-g-l {
+		float: left;
+		width: 50%;
+		text-align: center;
+		padding: .5rem;
+		box-sizing: border-box;
+		background: @col-btn;
+		color:#FFFFFF;
+	 &.ot-col {background: @col-btn-ot;}
+	}
+}
+
 .goods-con {
 	padding: .5rem;
 	background: #FFFFFF;
@@ -172,6 +276,8 @@
 	bottom: 0;
 	z-index: 11;
 	height:15rem;
+	display: none;
+	z-index: 33;
 	.show {
 		position: relative;
 		.pro-img {

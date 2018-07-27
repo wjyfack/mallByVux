@@ -14,35 +14,35 @@
 	  <div class="right-cont box-flex">
 	      <div class="nav-cont">
 	          <div class="nav-cont-list">
-	                <router-link to="">
+	                <router-link to="/">
 	                  <img src='./../assets/home.png' ></img>
 	                  <!-- <i class="iconfont icon-home"></i> -->
 	                  <p>首页</p>
 	                </router-link>  
 	          </div>
 	          <div class="nav-cont-list">
-	              <router-link to="">
+	              <router-link to="/search">
 	                    <img src='./../assets/banner_search.png' ></img>
 	                    <!-- <i class="iconfont icon-sousuo"></i> banner_search.png-->
 	                    <p>搜索</p>
 	              </router-link>  
 	          </div>
 	          <div class="nav-cont-list">
-	                <router-link to="">
+	                <router-link to="/category">
 	                <img src='./../assets/cate.png' ></img>
 	                    <!-- <i class="iconfont icon-caidan"></i> -->
 	                    <p>分类</p>
 	                </router-link> 
 	          </div>
 	          <div class="nav-cont-list">
-	                <router-link to="">
+	                <router-link to="/cate">
 	                    <img src='./../assets/flow.png' ></img>
 	                    <!-- <i class="iconfont icon-gouwuche"></i> -->
 	                    <p>购物车</p>
 	                </router-link> 
 	          </div>
 	          <div class="nav-cont-list">
-	              <router-link to="">
+	              <router-link to="/home">
 	                    <img src='./../assets/user.png' ></img>
 	                    <!-- <i class="iconfont icon-geren"></i> -->
 	                    <p>个人中心</p>

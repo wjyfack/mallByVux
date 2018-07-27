@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
 import vuxx from '@/components/HelloFromVux'
 // 加载页面
 import index from '@/pages/index/index'

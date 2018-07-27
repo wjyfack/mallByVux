@@ -26,7 +26,7 @@
         <section class="product-list-medium product-list-mediums">
             <ul>
               <li v-for="best in product_list">
-                <router-link :to="'/product?id='+best.id" class="product-div">
+                <router-link :to="'/goods?id='+best.id" class="product-div">
                   <img class="product-list-img" :src="best.pic" />
                   <div class="product-text  index-product-text">
                       <div class="cont">{{best.goods_name}}</div>
@@ -34,7 +34,7 @@
                     </div>
                 </router-link>
               </li>
-              
+
             </ul>
         </section>
     </div>

@@ -8,8 +8,8 @@
 			<div class="user-avatar">
 				<div><img src="http://placehold.it/100x100" alt=""></div>
 				<div class="msg">
-					<span>{{phone}}</span>
-					<span>{{grade}}</span>
+					<span>{{userInfo.username}}</span>
+					<span>{{userInfo.grade}}</span> <!-- 等级-->
 				</div>
 			</div>
 		</div>
@@ -107,8 +107,12 @@
 			return {
 				gridItem: [{label: '待付款',pic: 'payment.png'}],
 				phone: '12312xxxxx',
-				grade: '铜牌'
+				grade: '铜牌',
+				userInfo: this.$store.state.userInfo
 			}
+		},
+		created(){
+			console.log(this.$store.state.user.name == '' )
 		}
 	}
 </script>
