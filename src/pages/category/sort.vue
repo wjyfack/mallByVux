@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="category" ref="cate">
 
 		<div class="search-t">
 			<router-link to="/search">
@@ -48,10 +48,18 @@
 				index: 1
 			}
 		},
-		watch: {
-			'$route' (to, from) {
-				this.$router.go(0)
-			}
+		created() {
+			
+			
+			
+		},
+		mounted() {
+			let cate = this.$refs.cate
+			let height = window.innerHeight
+			
+			cate.style.background = "#FFF"
+			cate.style.height = window.innerHeight+'px'
+			
 		},
 		methods: {
 			
@@ -68,7 +76,7 @@
 .sro-group .sro-item .sro-name {font-size: .8rem;text-align: center;}
 .cate {display: flex;width: 100%;overflow: hidden;}
 .sroller {width:25%;}
-.cate-group {border-right: 1px solid #F4F4F9;}
+.cate-group {border-right: 1px solid #F4F4F9;background: #fbf9fe;}
 .cate-item {padding: .5rem;text-align: center;border-bottom: 1px solid #F4F4F9;border-left: 2px solid #fbf9fe;}
 .cate-item.active {background-color:#fbf9fe;border-left: 2px solid #0E6EB8;background: #FFFFFF;border-right:1px solid #FFFFFF;margin-right: -1px;}
 .sroller-view {width:80%;background: #FFFFFF;overflow: hidden;overflow-y: scroll;height: 30rem;}

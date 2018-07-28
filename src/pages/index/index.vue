@@ -99,7 +99,7 @@ export default {
 .dots-class {color: #0E6EB8;}
 .clearfix{clear: both;}
 .mar-t-04 {
-    margin: 2.5rem 0;
+    margin: 2.5rem 0 3.5rem 0;
   }
 .col-f1{fill: #C4C4C4;vertical-align:middle;}
 	.img {

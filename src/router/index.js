@@ -12,6 +12,8 @@ import Register from '@/pages/user/register'
 import Forget from '@/pages/user/forget'
 import Home from '@/pages/user/home'
 import Order from '@/pages/user/order'
+import UserIndex from '@/pages/user/index'
+import My from '@/pages/user/my'
 import Category from '@/pages/category/sort'
 import Search from '@/pages/search/index'
 import Cate from '@/pages/cate/index'
@@ -41,27 +43,6 @@ export default new Router({
 			name: 'ArtDetail',
 			component: ArtDetail
 		},{
-			path: '/login',
-			name: 'login',
-			component: Login
-		},{
-			path: '/register',
-			name: 'register',
-			component: Register
-		},{
-			path: '/forget',
-			name: 'forget',
-			component: Forget
-		},{
-			path: '/home',
-			name: 'home',
-			component: Home
-		},{
-			path: '/order',
-			name: 'order',
-			component: Order
-		},
-		{
 			path: '/category',
 			name: 'category',
 			component: Category
@@ -77,6 +58,36 @@ export default new Router({
 			path: '/goods',
 			name: 'goods',
 			component: Goods
+		},
+		{
+			path: '/user',
+			name: 'user',
+			component: UserIndex,
+			children : [{
+				path: 'order',
+				name: 'order',
+				component: Order
+			},{
+				path: 'forget',
+				name: 'forget',
+				component: Forget
+			},{
+				path: 'home',
+				name: 'home',
+				component: Home
+			},{
+				path: 'register',
+				name: 'register',
+				component: Register
+			},{
+				path: 'my',
+				name: 'my',
+				component: My
+			},{
+				path: 'login',
+				name: 'login',
+				component: Login
+			}]
 		},
   ]
 })

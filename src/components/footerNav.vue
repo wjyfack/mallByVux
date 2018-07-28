@@ -5,19 +5,19 @@
 				<li class="nav-list-item">
 					<router-link to="/category">
 						<img src="http://placehold.it/100x100" alt="">
-						<span>分类</span>
+						<span class="col-6">分类</span>
 					</router-link>
 				</li>
 				<li class="nav-list-item">
-					<router-link to="">
+					<router-link to="/cate">
 						<img src="http://placehold.it/100x100" alt="">
-						<span>购物车</span>
+						<span class="col-6">购物车</span>
 					</router-link>
 				</li>
 				<li class="nav-list-item">
-					<router-link to="">
+					<router-link to="/search">
 						<img src="http://placehold.it/100x100" alt="">
-						<span>搜索</span>
+						<span class="col-6">搜索</span>
 					</router-link>
 				</li>
 			</ul>
@@ -69,9 +69,9 @@ export default {
 					let userInfo = this.$store.state.userInfo
 					console.log(userInfo)
 					if(userInfo.info == '') {
-						this.$router.push({path:'/login'})
+						this.$router.push({path:'/user/login'})
 					}else {
-						this.$router.push({path: '/home'})
+						this.$router.push({path: '/user/home'})
 					}
 				}
       }
