@@ -36,7 +36,7 @@
       <a href="javascript:void(0);" class="box-flex nav-list">
         <div class="fot-more-img" :class="{'fot-more-roate':isActive}" @click="moreActive"><img src="./../assets/more.png"><div><!--更多--></div></div>
       </a>
-      <router-link to="category" class="box-flex position-rel nav-list">
+      <router-link to="/category" class="box-flex position-rel nav-list">
 		  <img src="./../assets/flow.png" alt="">
         <span>分类</span>
       </router-link>

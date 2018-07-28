@@ -41,12 +41,12 @@
 	                    <p>购物车</p>
 	                </router-link> 
 	          </div>
-	          <div class="nav-cont-list">
-	              <router-link to="/home">
+	          <div class="nav-cont-list" @click="islogin()">
+	              
 	                    <img src='./../assets/user.png' ></img>
 	                    <!-- <i class="iconfont icon-geren"></i> -->
 	                    <p>个人中心</p>
-	              </router-link> 
+	              
 	          </div>
 	      </div>
 	  </div>
@@ -68,7 +68,16 @@
 			bindRemv: function() {
 				// console.log(this.show)
 				this.show = !this.show
-			}
+			},
+				islogin: function() {
+					let userInfo = this.$store.state.userInfo
+					console.log(userInfo)
+					if(userInfo.info == '') {
+						this.$router.push({path:'/user/login'})
+					}else {
+						this.$router.push({path: '/user/home'})
+					}
+				}
 		}
 	}
 </script>

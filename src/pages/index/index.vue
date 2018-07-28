@@ -20,7 +20,7 @@
 		
 		<div class="box title inx-ms" >
         <div class="b-color-f p-r">
-            <img class="img" src="../../assets/images/guangao.png">
+            <img class="img" src="./../../assets/images/guangao.png">
             <a href=""><div class="index-jt-more jinpin-bg"><span>更多</span><x-icon class="col-w" type="ios-arrow-right" size="20"></x-icon></div></a>   
         </div>
         <section class="product-list-medium product-list-mediums">
